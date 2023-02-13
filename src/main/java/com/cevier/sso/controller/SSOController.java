@@ -175,7 +175,7 @@ public class SSOController {
         Cookie cookie = new Cookie(key, null);
         cookie.setDomain("sso.com");
         cookie.setPath("/");
-        cookie.setMaxAge(-1);
+        cookie.setMaxAge(7 * 24 * 3600); // 7d
         response.addCookie(cookie);
     }
 }
