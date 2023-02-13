@@ -1,7 +1,6 @@
 package com.cevier.sso.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.cevier.sso.pojo.User;
 import com.cevier.sso.service.UserService;
 import com.cevier.sso.utils.RedisUtils;
 import org.springframework.stereotype.Controller;
