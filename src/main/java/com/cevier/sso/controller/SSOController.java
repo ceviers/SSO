@@ -125,7 +125,7 @@ public class SSOController {
 
 
     /**
-     * 验证ticket
+     * 退出登入
      */
     @GetMapping("/logout")
     @ResponseBody
