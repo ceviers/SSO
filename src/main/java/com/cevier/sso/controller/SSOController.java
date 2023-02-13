@@ -145,23 +145,21 @@ public class SSOController {
     private void setCookie(String key,
                            String val,
                            HttpServletResponse response) {
-
         Cookie cookie = new Cookie(key, val);
         cookie.setDomain("sso.com");
         cookie.setPath("/");
         response.addCookie(cookie);
     }
     private String getCookie(HttpServletRequest request, String key) {
-
         Cookie[] cookieList = request.getCookies();
         if (cookieList == null || StringUtils.hasText(key)) {
             return null;
         }
 
         String cookieValue = null;
-        for (int i = 0 ; i < cookieList.length; i ++) {
-            if (cookieList[i].getName().equals(key)) {
-                cookieValue = cookieList[i].getValue();
+        for (Cookie cookie : cookieList) {
+            if (cookie.getName().equals(key)) {
+                cookieValue = cookie.getValue();
                 break;
             }
         }
@@ -171,7 +169,6 @@ public class SSOController {
 
     private void deleteCookie(String key,
                               HttpServletResponse response) {
-
         Cookie cookie = new Cookie(key, null);
         cookie.setDomain("sso.com");
         cookie.setPath("/");
